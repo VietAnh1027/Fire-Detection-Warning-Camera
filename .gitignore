@@ -1,0 +1,27 @@
+# Ignore thư mục .idea của PyCharm
+.idea/
+
+# Ignore thư mục ảo hóa của Python
+.venv/
+.env/
+
+# Ignore các file biên dịch của Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore file log
+*.log
+
+# Ignore các file hệ thống của macOS và Windows
+.DS_Store
+Thumbs.db
+
+# Ignore output từ Jupyter Notebook
+.ipynb_checkpoints/
+
+# Ignore các file backup hoặc tạm thời
+*.swp
+*.swo
+*~

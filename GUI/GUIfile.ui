@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1104</width>
+    <height>648</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{background-color:#1D1616}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>80</y>
+      <width>211</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="statusTip">
+     <string>Start to detect</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{background-color: #8E1616; border-radius:15px}
+QPushButton:hover {
+    background-color: #D84040
+}
+
+QPushButton:pressed {
+    background-color: #8E1616;
+}</string>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>240</y>
+      <width>211</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string>Choose the device</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{background-color: #8E1616; border-radius:15px}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QRadioButton" name="radioCPU">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>30</y>
+       <width>81</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>CPU</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Device:</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioGPU">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>70</y>
+       <width>81</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>GPU</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>410</y>
+      <width>211</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string>On/Off Alarm mode</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{background-color: #8E1616; border-radius:15px}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Alarm Mode: </string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkAlarm">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>30</y>
+       <width>16</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="credit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>600</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Created by: VietAnh1027</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="screen">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>10</y>
+      <width>801</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../resources/wait.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1104</width>
+     <height>33</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
