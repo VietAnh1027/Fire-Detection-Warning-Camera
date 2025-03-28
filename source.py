@@ -23,6 +23,7 @@ class GUI(QMainWindow):
         self.radioCPU.toggled.connect(self.cpu_mode)
         self.radioGPU.toggled.connect(self.gpu_mode)
 
+        self.checkAlarm.setChecked(True)
         self.checkAlarm.stateChanged.connect(self.alarm_mode)
 
         self.timer = QTimer()
@@ -30,7 +31,7 @@ class GUI(QMainWindow):
 
         pygame.mixer.init()
         self.sound = pygame.mixer.Sound("resources/sound.mp3")
-        self.useSound = False
+        self.useSound = True
 
         self.model = YOLO("bestFire.pt")
         self.model.to("cpu")
@@ -52,13 +53,11 @@ class GUI(QMainWindow):
     def cpu_mode(self):
         if self.radioCPU.isChecked():
             self.model.to("cpu")
-            print("Using cpu")
 
     def gpu_mode(self):
         try:
             if self.radioGPU.isChecked():
                 self.model.to("cuda")
-                print("Using cuda")
         except:
             self.show_popup()
             self.radioCPU.setChecked(True)
@@ -74,17 +73,15 @@ class GUI(QMainWindow):
     def alarm_mode(self):
         if self.checkAlarm.isChecked():
             self.useSound = True
-            print("Use sound")
         else:
             self.useSound = False
-            print("No use sound")
 
     def update_frame(self):
         if self.cap is None:
             return
         ret, first_frame = self.cap.read()
         if ret:
-            results =  self.model.predict(source=first_frame)
+            results = self.model.predict(source=first_frame)
             frame = results[0].plot()
             fire = results[0].boxes.cls.cpu().numpy().astype('int')
             if fire.size != 0 and self.useSound:
